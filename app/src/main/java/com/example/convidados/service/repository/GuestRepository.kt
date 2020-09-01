@@ -157,7 +157,7 @@ class GuestRepository private constructor(context: Context){
             val db = mGuestDataBaseHelper.writableDatabase
             val insertValue = ContentValues()
             insertValue.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
-            insertValue.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.presence)
+            insertValue.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, guest.presence)
 
             db.insert(DataBaseConstants.GUEST.TABLE_NAME, null, insertValue)
             true
@@ -172,7 +172,7 @@ class GuestRepository private constructor(context: Context){
             val db = mGuestDataBaseHelper.writableDatabase
             val insertValue = ContentValues()
             insertValue.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
-            insertValue.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.presence)
+            insertValue.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, guest.presence)
 
             val selection=DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
             val args= arrayOf(guest.id.toString())
